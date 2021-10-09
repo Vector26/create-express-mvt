@@ -1,0 +1,20 @@
+{
+  "name": "crud-practise",
+  "version": "1.0.0",
+  "description": "Just a practise for Express API",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vector26",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "fs-extra": "^10.0.0",
+    "mongoose": "^6.0.8",
+    "nodemon": "^2.0.13",
+    "prompt-sync": "^4.2.0"
+  }
+}
