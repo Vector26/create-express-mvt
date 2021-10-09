@@ -1,7 +1,7 @@
 {
   "name": "create-express-mvt",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.11",
+  "description": "This is a boiler-plate creator for expressJS in an MVT format. Each Router-domain has its own Model,View & Routes.",
   "main": "handle.js",
   "bin": {
     "create-express-mvt": "./handle.js"
