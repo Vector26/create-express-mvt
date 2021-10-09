@@ -5,7 +5,7 @@ Each Router-domain has its own Model,View & Routes.
 * As each Router Domain has its own work-folder, the domains can be re-used in other products by simply picking and droping into new project files.
 
 ![](2021-10-10-02-07-37.png)
-So Basically if I have a project1 and have 3 app/router-domains in it(as displayed in the image above). I also have another project, Proekct2 which rquires app1 in it.
+So Basically if I have a project1 and have 3 app/router-domains in it(as displayed in the image above). I also have another project, Project2 which rquires app1 in it.
 
 ![](2021-10-10-02-08-15.png)
 
