@@ -3,17 +3,21 @@ const express=require('express');
 const app=express();
 const routes=require('./routes');
 const mongoose = require("mongoose");
+require('dotenv').config();
+const displayRoutes  = require('./displayR');
 
-const PORT=6969;
+const PORT=process.env.PORT;
 
 // Middlewares
 app.use(express.json());
 
 // DataBase
 
-mongoose.connect("mongodb+srv://plannerAdmin:nfsedge26@cluster0.qkev8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority").then(con =>{ 
+mongoose.connect(`${process.env.DB_HOST}`).then(con =>{ 
     // console.log(con.connections)
     console.log("DB CONNECTED!")
+  }).catch(err=>{
+    
   });
 
 //Routes
@@ -23,5 +27,6 @@ app.use('/',routes);
 // server start
 
 app.listen(PORT,()=>{
+    displayRoutes(app);
     console.log(`Server is running on localhost:${PORT}`);
 });
