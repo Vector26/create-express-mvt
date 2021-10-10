@@ -1,4 +1,4 @@
-# CREATE-EXPRESS-MVT
+# Create-Express-MVT
 This is a boiler-plate creator for expressJS in an MVT format.
 Each Router-domain has its own Model,View & Routes.
 ## Pros:
