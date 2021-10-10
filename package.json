@@ -1,5 +1,15 @@
 {
   "name": "create-express-mvt",
+  "publishConfig": {
+    "@vector26:registry": "https://npm.pkg.github.com/"
+  },
+  "keywords": [
+    "ExpressJS",
+    "MVT"
+  ],
+  "repository": {
+    "url": "git@github.com:Vector26/create-express-mvt.git"
+  },
   "version": "1.0.11",
   "description": "This is a boiler-plate creator for expressJS in an MVT format. Each Router-domain has its own Model,View & Routes.",
   "main": "handle.js",
@@ -9,7 +19,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "vecto26",
+  "author": "vector26",
   "license": "ISC",
   "dependencies": {
     "fs-extra": "^10.0.0",
