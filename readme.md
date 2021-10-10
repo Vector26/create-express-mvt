@@ -19,7 +19,7 @@ It would be very easy, as all the domains work independently and are coded indep
 ## Installation
 
 ```Bash
-npm install create-express-mvt
+npm install -g create-express-mvt
 ```
 Then go to the folder you want to create your express app
 
