@@ -41,7 +41,16 @@ PORT=`PORT Number without inverted commas`
 ```Bash
 npx create-express-mvt APP_NAME
 ```
+# How it works
 
+The index.js is the main file. It controls the basic defintions and middlewares,etc. Each router-domain known as an `App` has its own model,view and routes.
+
+What happens in an `App`:
+
+* The model is created in model.js
+* The model is then imported to views.js, where views/functions are coded using the imported data-models. Each function which is to be called upon a route is imported independently using `module.exports.FUNCTION_NAME=FUNCTION_NAME`
+* Then the views are imported in route.js and are connected to needed routes. The router is then exported.
+* The main.js in imports routes which is then exported for Global routes.js. The routes.js all the routes registered in it JSON object. See the routes.js for understadning how to import your `App`.
 # Future/Contribution Issues to be:
 * Admin Panel
 * JWT Auth Default-App

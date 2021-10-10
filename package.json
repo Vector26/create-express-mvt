@@ -10,7 +10,7 @@
   "repository": {
     "url": "git@github.com:Vector26/create-express-mvt.git"
   },
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "This is a boiler-plate creator for expressJS in an MVT format. Each Router-domain has its own Model,View & Routes.",
   "main": "handle.js",
   "bin": {
