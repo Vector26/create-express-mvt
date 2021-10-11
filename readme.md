@@ -50,7 +50,7 @@ What happens in an `App`:
 * The model is created in model.js
 * The model is then imported to views.js, where views/functions are coded using the imported data-models. Each function which is to be called upon a route is imported independently using `module.exports.FUNCTION_NAME=FUNCTION_NAME`
 * Then the views are imported in route.js and are connected to needed routes. The router is then exported.
-* The main.js in imports routes which is then exported for Global routes.js. The routes.js all the routes registered in it JSON object. See the routes.js for understadning how to import your `App`.
+* The main.js in the app imports routes which is then exported to Global routes.js. The routes.js routes all the routes registered in its JSON object. See the routes.js for understadning how to import your `App`.
 # Future/Contribution Issues to be:
 * Admin Panel
 * JWT Auth Default-App

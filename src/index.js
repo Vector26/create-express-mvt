@@ -12,7 +12,6 @@ const PORT=process.env.PORT;
 app.use(express.json());
 
 // DataBase
-
 mongoose.connect(`${process.env.DB_HOST}`).then(con =>{ 
     // console.log(con.connections)
     console.log("DB CONNECTED!")
@@ -21,11 +20,9 @@ mongoose.connect(`${process.env.DB_HOST}`).then(con =>{
   });
 
 //Routes
-
 app.use('/',routes);
 
 // server start
-
 app.listen(PORT,()=>{
     displayRoutes(app);
     console.log(`Server is running on localhost:${PORT}`);
