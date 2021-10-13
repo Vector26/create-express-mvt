@@ -6,10 +6,11 @@ const prompt = require('prompt-sync')();
 // Imports_^________________________________________________________
 const app_name=3;
 const action=2;
-const actions={undefined:"\\src","startapp":"\\src\\default_app"};
+
+const actions={undefined:"/src","startapp":"/src/default_app"};
 var dirs=[];
 const check="package.json";
-const __dir=`${__dirname}\\${actions[process.argv[action]]}`;
+const __dir=`${__dirname}/${actions[process.argv[action]]}`;
 const exceptdir=["node_modules"];
 // Constants and definitons _^_______________________________________________________
 files=fs.readdirSync(__dir);
@@ -34,7 +35,7 @@ function create(){
     name=process.argv[app_name];
     const cwd = process.cwd();
 
-    var dest = `${cwd}\\${name}`; //dynamic destination that depends on the process's CWD not the handle.js's dir
+    var dest = `${cwd}/${name}`; //dynamic destination that depends on the process's CWD not the handle.js's dir
     dest=dest.replace(/\s/,"\ ");
     fs.mkdirsSync(dest);
 
@@ -47,7 +48,7 @@ function create(){
 // set of structured files into the required_^__________________________________________________________________
 async function copy(arr,destination){
     arr.forEach(source=>{
-        fs.copySync(`${__dir}\\${source}`, `${destination}\\${source}`);
+        fs.copySync(`${__dir}/${source}`, `${destination}/${source}`);
     });
 }
 // Copying files recursively _^_______________________________________________________
