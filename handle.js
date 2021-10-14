@@ -13,17 +13,24 @@ const check="package.json";
 const __dir=`${__dirname}/${actions[process.argv[action]]}`;
 const exceptdir=["node_modules"];
 // Constants and definitons _^_______________________________________________________
-files=fs.readdirSync(__dir);
-files.forEach(file => {
-    if(exceptdir.indexOf(file) == -1)
-    dirs.push(file);
-});
-// Files staging for user_^_______________________________________________________
+try
+    {
+    files=fs.readdirSync(__dir);
+    files.forEach(file => {
+        if(exceptdir.indexOf(file) == -1)
+        dirs.push(file);
+    });
+    // Files staging for user_^_______________________________________________________
 
-if(fs.readdirSync(process.cwd()).indexOf(check)==-1 && process.argv[action]==Object.keys(actions)[1])
-{
-    console.log("Creation denied, create express-app first");
-    process.exit(0);
+    if(fs.readdirSync(process.cwd()).indexOf(check)==-1 && process.argv[action]==Object.keys(actions)[1])
+    {
+        console.log("Creation denied, create express-app first");
+        process.exit(0);
+    }
+    create();
+}
+catch (e) {
+    console.log("Something went wrong");
 }
 // Checking if workspace-boilerplate exists in CWD before adding an app_^__________________________
 
@@ -52,4 +59,3 @@ async function copy(arr,destination){
     });
 }
 // Copying files recursively _^_______________________________________________________
-create();

@@ -16,6 +16,8 @@ It would be very easy, as all the domains work independently and are coded indep
 <!-- <img src="https://i.ibb.co/rMzdqRP/2021-10-10-02-07-37.png" alt="2021-10-10-02-07-37" border="0">
 <img src="https://i.ibb.co/kQ9jFbj/2021-10-10-02-08-15.png" alt="2021-10-10-02-08-15" border="0">
 <img src="https://i.ibb.co/RQPgWrZ/2021-10-10-02-08-40.png" alt="2021-10-10-02-08-40" border="0"> -->
+
+![](https://i.ibb.co/k6YDH0X/mvt.png)
 ## Installation
 
 ```Bash
@@ -51,6 +53,9 @@ What happens in an `App`:
 * The model is then imported to views.js, where views/functions are coded using the imported data-models. Each function which is to be called upon a route is imported independently using `module.exports.FUNCTION_NAME=FUNCTION_NAME`
 * Then the views are imported in route.js and are connected to needed routes. The router is then exported.
 * The main.js in the app imports routes which is then exported to Global routes.js. The routes.js routes all the routes registered in its JSON object. See the routes.js for understadning how to import your `App`.
+
+<!-- <video src='https://www.youtube.com/watch?v=FvY0Z7LGxsQ' width=180/> -->
+[Tutorial Click Here!](https://www.youtube.com/watch?v=FvY0Z7LGxsQ)
 # Future/Contribution Issues to be:
 * Admin Panel
 * JWT Auth Default-App
