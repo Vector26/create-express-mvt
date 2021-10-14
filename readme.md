@@ -43,6 +43,11 @@ PORT=`PORT Number without inverted commas`
 ```Bash
 npx create-express-mvt APP_NAME
 ```
+Now add the app_name to **app_register.json** in
+
+```JSON
+{"app_name":"router-domain you want it on"}
+```
 # How it works
 
 The index.js is the main file. It controls the basic defintions and middlewares,etc. Each router-domain known as an `App` has its own model,view and routes.
