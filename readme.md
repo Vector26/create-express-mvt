@@ -41,7 +41,12 @@ PORT=`PORT Number without inverted commas`
 
 **Only use it from inside the CEM project-workspace**
 ```Bash
-npx create-express-mvt APP_NAME
+npx create-express-mvt startapp
+```
+Now add the app_name to **app_register.json** in
+
+```JSON
+{"app_name":"router-domain you want it on"}
 ```
 # How it works
 
