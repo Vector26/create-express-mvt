@@ -6,12 +6,12 @@ const prompt = require('prompt-sync')();
 // Imports_^________________________________________________________
 const app_name=3;
 const action=2;
-
+// const auth=require('./routes/auth');
 const actions={undefined:"/src","startapp":"/src/default_app"};
 var dirs=[];
 const check="package.json";
 const __dir=`${__dirname}/${actions[process.argv[action]]}`;
-const exceptdir=["node_modules"];
+const exceptdir=["node_modules","routes","models"];
 // Constants and definitons _^_______________________________________________________
 try
     {
@@ -59,3 +59,7 @@ async function copy(arr,destination){
     });
 }
 // Copying files recursively _^_______________________________________________________
+
+// EXPORTS
+// console.log(typeof(auth));
+// module.exports.Auth=auth;

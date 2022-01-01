@@ -1,19 +1,15 @@
 // Imports
 const model=require('./models');
+const path = require('path');
 // __________________________________________________
 // Functions/Views to render for R&r(requests & responses) using data-models
 
-// function start(req, res){
-//     res.json({item: 'Welcome ini separated page...'});
-// }
-
-// function end(req, res){
-//     res.json({item: 'Bye ini separated page...'});
-// }
+function index(req, res){
+    res.sendFile(path.join(__dirname+'/index.html'));
+}
 
 // __________________________________________________
 
 // Exports
 
-// module.exports.start=start;
-// module.exports.end=end;
+module.exports.index=index;

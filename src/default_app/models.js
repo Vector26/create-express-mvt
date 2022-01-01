@@ -11,8 +11,7 @@ const mongoose = require("mongoose");
 //     email:{
 //         type:String,
 //         required:[true,"Please specify your email"],
-//         unique:true,
-//         validate:[validator.isEmail,'Please provide a valid email']
+//         unique:true
 //     },
 //     password:{
 //         type:String,
