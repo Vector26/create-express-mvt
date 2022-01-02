@@ -10,7 +10,7 @@ const PORT=process.env.PORT;
 
 // Middlewares
 app.use(express.json());
-
+app.set('view engine', 'ejs');
 // DataBase
 mongoose.connect(`${process.env.DB_HOST}`).then(con =>{ 
     // console.log(con.connections)

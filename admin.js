@@ -36,6 +36,29 @@ module.exports = class Admin{
         this.DELETE(MODEL,model_name);
     }
 
+    
+    getSchema(MODEL){
+        var data=MODEL.schema.paths;
+        var actualSchema={};
+        const infoKey="instance"
+        Object.keys(data).map((e)=>{
+            actualSchema[e]=data[e][infoKey];
+        });
+        return actualSchema;
+    }
+
+    autoPopulate(item){
+        const exclude=['_id']
+        const include=['ObjectID','Array']
+        var ret=[]
+        Object.keys(item).map((e)=>{
+            if(!exclude.includes(e) && (include.includes(item[e])))
+            ret.push(e);
+        });
+        return ret;
+    }
+    // ____________________Helper Functions above_________________________________________
+    
     CREATE(MODEL,model_name){
         this.app.post(`/${model_name}`, (req, res) => {
             var data=req.body;
@@ -58,16 +81,10 @@ module.exports = class Admin{
                     res.json("Wrong Schema, This will be reported");
                 });
         });
-    }
-
-    getSchema(MODEL){
-        var data=MODEL.schema.paths;
-        var actualSchema={};
-        const infoKey="instance"
-        Object.keys(data).map((e)=>{
-            actualSchema[e]=data[e][infoKey];
+        this.app.get(`/${model_name}/create`, (req, res) => {
+          var schema=this.getSchema(MODEL);
+          res.json({schema})
         });
-        return actualSchema;
     }
 
     READ(MODEL,model_name){
@@ -83,12 +100,20 @@ module.exports = class Admin{
             });
         });
         this.app.get(`/${model_name}/:id`, (req, res) => {
-            MODEL.find({_id:req.params.id},function(err,item){
+            var schema=this.getSchema(MODEL);
+            var populatable=this.autoPopulate(schema);
+            MODEL.findOne({_id:req.params.id},async function(err,item){
                 if(err){
                     console.log(err);
                 }
                 else{
-                res.json(item);
+                    console.log(schema);
+                    await Promise.all(populatable.map(async (e)=>{
+                        // console.log(MODEL.populate(e));
+                        await item.populate(e);
+                    }))
+                    res.json({item});
+                    
                 }
             });
         });
